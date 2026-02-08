@@ -3,107 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-BRIDGE - 계정 관리</title>
+    <title>I-BRIDGE - 로그인</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h1>🌉 I-BRIDGE</h1>
-                <p>계정 관리 시스템</p>
-            </div>
-            <nav>
-                <button class="btn btn-primary" onclick="openAddModal()">
-                    ➕ 새 계정 추가
-                </button>
-            </nav>
-        </header>
-
-        <main>
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3>전체 계정</h3>
-                    <p class="stat-number" id="totalUsers">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>활성 계정</h3>
-                    <p class="stat-number" id="activeUsers">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>비활성 계정</h3>
-                    <p class="stat-number" id="inactiveUsers">0</p>
-                </div>
-            </div>
-
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="🔍 사용자 이름 또는 이메일로 검색..." onkeyup="filterUsers()">
-            </div>
-
-            <div class="table-container">
-                <table id="usersTable">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>사용자명</th>
-                            <th>이메일</th>
-                            <th>역할</th>
-                            <th>상태</th>
-                            <th>생성일</th>
-                            <th>작업</th>
-                        </tr>
-                    </thead>
-                    <tbody id="usersTableBody">
-                        <!-- 동적으로 채워질 부분 -->
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
-
-    <!-- 추가/수정 모달 -->
-    <div id="userModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">새 계정 추가</h2>
-            <form id="userForm" onsubmit="saveUser(event)">
-                <input type="hidden" id="userId">
-                
-                <div class="form-group">
-                    <label for="username">사용자명 *</label>
-                    <input type="text" id="username" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">이메일 *</label>
-                    <input type="email" id="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="role">역할</label>
-                    <select id="role">
-                        <option value="User">User</option>
-                        <option value="Administrator">Administrator</option>
-                        <option value="Manager">Manager</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="status">상태</label>
-                    <select id="status">
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
-                    </select>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">취소</button>
-                    <button type="submit" class="btn btn-primary">저장</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script>
+        // 루트 페이지 접속 시 로그인 페이지로 리다이렉트
+        window.location.href = 'login.html';
+    </script>
 </body>
 </html>
+

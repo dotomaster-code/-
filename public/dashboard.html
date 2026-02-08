@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-BRIDGE - 대시보드</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌉 I-BRIDGE</h1>
+                <p>대시보드</p>
+            </div>
+            <nav>
+                <span class="user-info" id="userInfo"></span>
+                <button class="btn btn-admin" id="adminButton" onclick="goToAdmin()" style="display: none;">
+                    ⚙️ 관리자 화면
+                </button>
+                <button class="btn btn-secondary" onclick="logout()">
+                    🚪 로그아웃
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="welcome-section">
+                <h2 id="welcomeMessage">환영합니다!</h2>
+                <p>I-BRIDGE 계정 관리 시스템에 로그인하셨습니다.</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <h3>📊 내 정보</h3>
+                    <div class="info-item">
+                        <strong>사용자명:</strong> <span id="myUsername"></span>
+                    </div>
+                    <div class="info-item">
+                        <strong>역할:</strong> <span id="myRole"></span>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>🔔 알림</h3>
+                    <p>새로운 알림이 없습니다.</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📝 최근 활동</h3>
+                    <p>최근 활동 내역이 없습니다.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

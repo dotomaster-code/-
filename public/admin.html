@@ -10,7 +10,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h1>🌉 I-BRIDGE</h1>
+                <h1>🌉 AI-BRIDGE</h1>
                 <p>계정 관리 시스템 (관리자)</p>
             </div>
             <nav>
@@ -50,8 +50,10 @@
                         <tr>
                             <th>ID</th>
                             <th>사용자명</th>
+                            <th>이름</th>
                             <th>이메일</th>
                             <th>역할</th>
+                            <th>레벨</th>
                             <th>상태</th>
                             <th>생성일</th>
                             <th>작업</th>
@@ -79,17 +81,56 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="name">이름 *</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">비밀번호 *</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="form-group">
                     <label for="email">이메일 *</label>
                     <input type="email" id="email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="role">역할</label>
-                    <select id="role">
+                    <select id="role" onchange="handleRoleChange()">
                         <option value="Student">학생 (Student)</option>
                         <option value="Teacher">선생님 (Teacher)</option>
                         <option value="Administrator">관리자 (Administrator)</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="level">레벨</label>
+                    <select id="level">
+                        <option value="Beginner">초급 (Beginner)</option>
+                        <option value="Intermediate">중급 (Intermediate)</option>
+                        <option value="Advanced">고급 (Advanced)</option>
+                        <option value="Junior">주니어 (Junior)</option>
+                        <option value="Senior">시니어 (Senior)</option>
+                        <option value="Master">마스터 (Master)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="teacherField" style="display: none;">
+                    <label for="teacherId">담당 선생님</label>
+                    <select id="teacherId">
+                        <option value="">선택하세요</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="parentPhoneField" style="display: none;">
+                    <label for="parentPhone">학부모 연락처</label>
+                    <input type="tel" id="parentPhone" placeholder="010-1234-5678">
+                </div>
+
+                <div class="form-group" id="parentEmailField" style="display: none;">
+                    <label for="parentEmail">학부모 이메일</label>
+                    <input type="email" id="parentEmail" placeholder="parent@example.com">
                 </div>
 
                 <div class="form-group">

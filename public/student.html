@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I-BRIDGE - 학생 대시보드</title>
+    <title>AI-BRIDGE - 학생 대시보드</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <h1>🌉 I-BRIDGE</h1>
+                <h1>🌉 AI-BRIDGE</h1>
                 <p>학생 대시보드</p>
             </div>
             <nav>
@@ -24,50 +24,73 @@
         <main>
             <div class="welcome-section">
                 <h2 id="welcomeMessage">환영합니다!</h2>
-                <p>학생 전용 페이지입니다.</p>
+                <p>열심히 학습하고 포트폴리오를 만들어보세요!</p>
             </div>
 
-            <div class="dashboard-cards">
-                <div class="dashboard-card">
-                    <h3>🎓 내 정보</h3>
-                    <div class="info-item">
-                        <strong>이름:</strong> <span id="myName"></span>
+            <!-- 탭 메뉴 -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('learning')">📚 학습하기</button>
+                <button class="tab-btn" onclick="showTab('progress')">📊 학습 현황</button>
+                <button class="tab-btn" onclick="showTab('reports')">📝 내 리포트</button>
+                <button class="tab-btn" onclick="showTab('portfolios')">🎨 내 포트폴리오</button>
+            </div>
+
+            <!-- 학습하기 탭 -->
+            <div id="learning-tab" class="tab-content active">
+                <h3>🎯 학습 과정</h3>
+                <div class="dashboard-cards">
+                    <div class="course-card">
+                        <h4>Python 기초</h4>
+                        <p>프로그래밍의 기초를 배워보세요</p>
+                        <button class="btn btn-primary" onclick="startLearning('python')">학습 시작</button>
                     </div>
-                    <div class="info-item">
-                        <strong>아이디:</strong> <span id="myUsername"></span>
+                    <div class="course-card">
+                        <h4>AI 입문</h4>
+                        <p>인공지능의 세계로 입문하세요</p>
+                        <button class="btn btn-primary" onclick="startLearning('ai')">학습 시작</button>
                     </div>
-                    <div class="info-item">
-                        <strong>역할:</strong> <span class="role-badge role-student">학생</span>
+                    <div class="course-card">
+                        <h4>웹 개발</h4>
+                        <p>웹사이트를 만들어보세요</p>
+                        <button class="btn btn-primary" onclick="startLearning('web')">학습 시작</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="dashboard-card">
-                    <h3>📖 수강 과목</h3>
-                    <p>등록된 과목이 없습니다.</p>
+            <!-- 학습 현황 탭 -->
+            <div id="progress-tab" class="tab-content">
+                <h3>📊 나의 학습 진행 현황</h3>
+                <div id="myProgressList">
+                    <!-- 동적으로 채워질 부분 -->
                 </div>
+            </div>
 
-                <div class="dashboard-card">
-                    <h3>📝 과제</h3>
-                    <p>제출할 과제: 0개</p>
-                    <p>완료한 과제: 0개</p>
+            <!-- 리포트 탭 -->
+            <div id="reports-tab" class="tab-content">
+                <h3>📝 나의 학습 리포트</h3>
+                <div id="myReportsList">
+                    <!-- 동적으로 채워질 부분 -->
                 </div>
+            </div>
 
-                <div class="dashboard-card">
-                    <h3>🔔 알림</h3>
-                    <p>새로운 알림이 없습니다.</p>
-                </div>
-
-                <div class="dashboard-card">
-                    <h3>📊 성적</h3>
-                    <p>성적 정보가 없습니다.</p>
-                </div>
-
-                <div class="dashboard-card">
-                    <h3>📅 일정</h3>
-                    <p>예정된 일정이 없습니다.</p>
+            <!-- 포트폴리오 탭 -->
+            <div id="portfolios-tab" class="tab-content">
+                <h3>🎨 나의 포트폴리오</h3>
+                <div class="portfolio-grid" id="myPortfoliosList">
+                    <!-- 동적으로 채워질 부분 -->
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- 리포트 상세 모달 -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReportModal()">&times;</span>
+            <h2>📝 학습 리포트 상세</h2>
+            <div id="reportDetail"></div>
+            <button class="btn btn-secondary" onclick="closeReportModal()">닫기</button>
+        </div>
     </div>
 
     <script src="student.js"></script>

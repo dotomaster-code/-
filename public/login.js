@@ -20,12 +20,8 @@ async function handleLogin(event) {
             // 로그인 성공 - 세션 저장
             sessionStorage.setItem('user', JSON.stringify(data.user));
             
-            // 관리자는 관리 페이지로, 일반 사용자는 대시보드로
-            if (data.user.role === 'Administrator') {
-                window.location.href = 'admin.html';
-            } else {
-                window.location.href = 'dashboard.html';
-            }
+            // 모든 사용자 대시보드로 이동 (admin도 대시보드에서 관리자 화면 버튼 사용)
+            window.location.href = 'dashboard.html';
         } else {
             alert(data.message || '로그인에 실패했습니다.');
         }

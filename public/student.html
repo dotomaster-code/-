@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-BRIDGE - 학생 대시보드</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🌉 I-BRIDGE</h1>
+                <p>학생 대시보드</p>
+            </div>
+            <nav>
+                <span class="user-info" id="userInfo"></span>
+                <button class="btn btn-secondary" onclick="logout()">
+                    🚪 로그아웃
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="welcome-section">
+                <h2 id="welcomeMessage">환영합니다!</h2>
+                <p>학생 전용 페이지입니다.</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <h3>🎓 내 정보</h3>
+                    <div class="info-item">
+                        <strong>이름:</strong> <span id="myName"></span>
+                    </div>
+                    <div class="info-item">
+                        <strong>아이디:</strong> <span id="myUsername"></span>
+                    </div>
+                    <div class="info-item">
+                        <strong>역할:</strong> <span class="role-badge role-student">학생</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📖 수강 과목</h3>
+                    <p>등록된 과목이 없습니다.</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📝 과제</h3>
+                    <p>제출할 과제: 0개</p>
+                    <p>완료한 과제: 0개</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>🔔 알림</h3>
+                    <p>새로운 알림이 없습니다.</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📊 성적</h3>
+                    <p>성적 정보가 없습니다.</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📅 일정</h3>
+                    <p>예정된 일정이 없습니다.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="student.js"></script>
+</body>
+</html>

@@ -10,15 +10,20 @@ app.use(express.static('public'));
 
 // 로그인 계정 데이터 (실제로는 데이터베이스와 암호화 사용)
 let accounts = [
-    { id: 1, username: 'admin', password: 'admin123', role: 'Administrator' },
-    { id: 2, username: 'user1', password: 'user123', role: 'User' }
+    { id: 1, username: 'admin', password: 'admin123', role: 'Administrator', name: '관리자' },
+    { id: 2, username: 'teacher1', password: 'teacher123', role: 'Teacher', name: '김선생' },
+    { id: 3, username: 'teacher2', password: 'teacher123', role: 'Teacher', name: '이선생' },
+    { id: 4, username: 'student1', password: 'student123', role: 'Student', name: '박학생' },
+    { id: 5, username: 'student2', password: 'student123', role: 'Student', name: '최학생' }
 ];
 
 // 샘플 사용자 데이터 (실제로는 데이터베이스 사용)
 let users = [
     { id: 1, username: 'admin', email: 'admin@ibridge.com', role: 'Administrator', status: 'Active', createdAt: '2024-01-15' },
-    { id: 2, username: 'user1', email: 'user1@ibridge.com', role: 'User', status: 'Active', createdAt: '2024-02-01' },
-    { id: 3, username: 'user2', email: 'user2@ibridge.com', role: 'User', status: 'Inactive', createdAt: '2024-02-05' }
+    { id: 2, username: 'teacher1', email: 'teacher1@ibridge.com', role: 'Teacher', status: 'Active', createdAt: '2024-02-01' },
+    { id: 3, username: 'teacher2', email: 'teacher2@ibridge.com', role: 'Teacher', status: 'Active', createdAt: '2024-02-02' },
+    { id: 4, username: 'student1', email: 'student1@ibridge.com', role: 'Student', status: 'Active', createdAt: '2024-02-03' },
+    { id: 5, username: 'student2', email: 'student2@ibridge.com', role: 'Student', status: 'Active', createdAt: '2024-02-04' }
 ];
 
 // 로그인 API
@@ -32,6 +37,7 @@ app.post('/api/login', (req, res) => {
             user: {
                 id: account.id,
                 username: account.username,
+                name: account.name,
                 role: account.role
             }
         });
